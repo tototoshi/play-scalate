@@ -2,7 +2,7 @@
 
 ## Install
 
-```
+```scala
 libraryDependencies ++= Seq(
   "com.github.tototoshi" %% "play-scalate" % "0.1.0-SNAPSHOT",
   "org.scalatra.scalate" %% "scalate-core" % "1.7.0",
@@ -16,7 +16,7 @@ unmanagedClasspath in Runtime += baseDirectory.value / "app" / "views"
 
 ## Usage
 
-```
+```scala
 package controllers
 
 import play.api._
