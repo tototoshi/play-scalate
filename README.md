@@ -9,7 +9,7 @@ libraryDependencies ++= Seq(
   "org.scala-lang" % "scala-compiler" % scalaVersion.value
 )
 
-unmanagedResourceDirectories in Compile += baseDirectory.value / "app" / "views",
+unmanagedResourceDirectories in Compile += baseDirectory.value / "app" / "views"
 ```
 
 ## Usage
