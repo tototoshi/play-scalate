@@ -39,8 +39,7 @@ object ApplicationBuild extends Build {
       "org.scalatra.scalate" %% "scalate-core" % "1.7.0",
       "org.scala-lang" % "scala-compiler" % scalaVersion.value
     ),
-    unmanagedResourceDirectories in Compile += baseDirectory.value / "app" / "views",
-    unmanagedClasspath in Runtime += baseDirectory.value / "app" / "views"
+    unmanagedResourceDirectories in Compile += baseDirectory.value / "app" / "views"
   )
   .dependsOn(plugin)
 

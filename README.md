@@ -10,8 +10,6 @@ libraryDependencies ++= Seq(
 )
 
 unmanagedResourceDirectories in Compile += baseDirectory.value / "app" / "views",
-
-unmanagedClasspath in Runtime += baseDirectory.value / "app" / "views"
 ```
 
 ## Usage
