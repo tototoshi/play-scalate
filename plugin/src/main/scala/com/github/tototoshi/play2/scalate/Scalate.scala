@@ -6,7 +6,6 @@ import play.twirl.api.Html
 
 object Scalate {
 
-  import java.io.{ InputStreamReader, BufferedReader }
   import org.fusesource.scalate._
   import org.fusesource.scalate.util._
   import org.fusesource.scalate.layout.DefaultLayoutStrategy
@@ -38,8 +37,18 @@ object Scalate {
     e
   }
 
-  def render(template: String, params: Map[String, Any] = Map.empty): Html = {
+  def render(template: String, params: Map[String, Any] = Map.empty): Html = try {
     Html(engine.layout(template, params))
+  } catch {
+    case e: InvalidSyntaxException =>
+      throw new ScalateCompilationException(
+        e.brief,
+        engine.resourceLoader.load(e.template),
+        e.pos.line,
+        e.pos.column,
+        e.brief,
+        e
+      )
   }
 
 }
