@@ -8,6 +8,5 @@ final class ScalateCompilationException(
   override val line: Integer,
   override val position: Integer,
   message: String,
-  cause: Throwable
-)extends PlayException.ExceptionSource("scalate compilation exception", message, cause)
+  cause: Throwable) extends PlayException.ExceptionSource("scalate compilation exception", message, cause)
 
