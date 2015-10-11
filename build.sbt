@@ -13,7 +13,7 @@ lazy val plugin = Project (
     resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/",
     libraryDependencies ++= Seq(
       "com.typesafe.play" %% "play" % play.core.PlayVersion.current % "provided",
-      "org.scalatra.scalate" %% "scalate-core" % "1.7.0" % "provided"
+      "org.scalatra.scalate" %% "scalate-core" % "1.7.1" % "provided"
     ),
     scalacOptions ++= Seq("-language:_", "-deprecation")
   ) ++ scalariformSettings ++ publishingSettings :_*
@@ -31,7 +31,7 @@ lazy val playapp = Project(
   scalaVersion := "2.11.6",
   version := playAppVersion,
   libraryDependencies ++= Seq(
-    "org.scalatra.scalate" %% "scalate-core" % "1.7.0",
+    "org.scalatra.scalate" %% "scalate-core" % "1.7.1",
     "org.scala-lang" % "scala-compiler" % scalaVersion.value
   ),
   unmanagedResourceDirectories in Compile += baseDirectory.value / "app" / "views"
