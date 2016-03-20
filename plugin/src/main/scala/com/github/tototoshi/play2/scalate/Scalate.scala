@@ -1,23 +1,27 @@
 package com.github.tototoshi.play2.scalate
 
-import play.api.Play
-import play.api.Play.current
+import javax.inject.{ Inject, Singleton }
+
+import play.api.{ Environment, Mode }
 import play.twirl.api.Html
 
-object Scalate {
+import scala.io.Source
+
+@Singleton
+class Scalate @Inject() (environment: Environment) {
 
   import org.fusesource.scalate._
-  import org.fusesource.scalate.util._
   import org.fusesource.scalate.layout.DefaultLayoutStrategy
+  import org.fusesource.scalate.util._
 
   class ClassPathResourceLoader extends ResourceLoader {
     private def using[A, R <: { def close() }](r: R)(f: R => A): A =
       try { f(r) } finally { r.close() }
 
     override def resource(uri: String): Option[Resource] = {
-      current.resourceAsStream(uri).map { inputStream =>
+      environment.resourceAsStream(uri).map { inputStream =>
         using(inputStream) { in =>
-          using(io.Source.fromInputStream(in)) { src =>
+          using(Source.fromInputStream(in)) { src =>
             StringResource(uri, src.getLines.mkString("\n"))
           }
         }
@@ -31,9 +35,9 @@ object Scalate {
     val availableTemplateTypes = Seq("jade", "scaml", "mustache", "ssp")
     val defaultTemplates = availableTemplateTypes.map("layouts/default." + _)
     e.layoutStrategy = new DefaultLayoutStrategy(e, defaultTemplates: _*)
-    e.classLoader = current.classloader
-    e.allowReload = Play.isDev
-    e.allowCaching = Play.isProd
+    e.classLoader = environment.classLoader
+    e.allowReload = environment.mode == Mode.Dev
+    e.allowCaching = environment.mode == Mode.Prod
     e
   }
 
