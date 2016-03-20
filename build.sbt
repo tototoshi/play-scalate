@@ -25,7 +25,7 @@ val playAppVersion = "1.0-SNAPSHOT"
 lazy val playapp = Project(
   playAppName,
   file("playapp")
-).enablePlugins(play.PlayScala).settings(scalariformSettings:_*)
+).enablePlugins(PlayScala).settings(scalariformSettings:_*)
 .settings(
   resourceDirectories in Test += baseDirectory.value / "conf",
   scalaVersion := "2.11.6",
