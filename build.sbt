@@ -8,7 +8,8 @@ lazy val plugin = Project (
     name := "play-scalate",
     organization := "com.github.tototoshi",
     version := "0.3.0",
-    scalaVersion := "2.11.8",
+    scalaVersion := "2.12.1",
+    crossScalaVersions := Seq("2.12.1", "2.11.8"),
     resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/",
     libraryDependencies ++= Seq(
       "com.typesafe.play" %% "play" % play.core.PlayVersion.current % "provided",
@@ -28,7 +29,7 @@ lazy val playapp = Project(
 ).enablePlugins(PlayScala).settings(scalariformSettings:_*)
 .settings(
   resourceDirectories in Test += baseDirectory.value / "conf",
-  scalaVersion := "2.11.8",
+  scalaVersion := "2.12.1",
   version := playAppVersion,
   libraryDependencies ++= Seq(
     "org.scalatra.scalate" %% "scalate-core" % "1.8.0",
