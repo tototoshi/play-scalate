@@ -51,17 +51,17 @@ def _publishTo(v: String) = {
 }
 
 val _pomExtra =
-  <url>http://github.com/tototoshi/play-scalate</url>
+  <url>http://github.com/scalate/play-scalate</url>
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
-      <url>http://github.com/tototoshi/play-scalate/blob/master/LICENSE.txt</url>
+      <url>http://github.com/scalate/play-scalate/blob/master/LICENSE.txt</url>
       <distribution>repo</distribution>
     </license>
   </licenses>
   <scm>
-    <url>git@github.com:tototoshi/play-scalate.git</url>
-    <connection>scm:git:git@github.com:tototoshi/play-scalate.git</connection>
+    <url>git@github.com:scalate/play-scalate.git</url>
+    <connection>scm:git:git@github.com:scalate/play-scalate.git</connection>
   </scm>
   <developers>
     <developer>
