@@ -1,5 +1,7 @@
 # play-scalate
 
+[![Build Status](https://travis-ci.org/scalate/play-scalate.png)](https://travis-ci.org/scalate/play-scalate)
+
 ## Install
 
 ```scala
