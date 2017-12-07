@@ -32,6 +32,7 @@ lazy val playapp = Project(
   crossScalaVersions := Seq("2.12.3", "2.11.11"),
   version := playAppVersion,
   libraryDependencies ++= Seq(
+    guice,
     "org.scalatra.scalate" %% "scalate-core" % "1.8.0",
     "org.scala-lang" % "scala-compiler" % scalaVersion.value
   ),
