@@ -34,7 +34,8 @@ lazy val playapp = Project(
   libraryDependencies ++= Seq(
     guice,
     "org.scalatra.scalate" %% "scalate-core" % "1.8.0",
-    "org.scala-lang" % "scala-compiler" % scalaVersion.value
+    "org.scala-lang" % "scala-compiler" % scalaVersion.value,
+    "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.2" % Test
   ),
   unmanagedResourceDirectories in Compile += baseDirectory.value / "app" / "views"
 )

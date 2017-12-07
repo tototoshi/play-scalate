@@ -1,1 +1,2 @@
-GET / controllers.Application.index
+GET     /jade           controllers.JadeController.index
+GET     /mustache       controllers.MustacheController.index
