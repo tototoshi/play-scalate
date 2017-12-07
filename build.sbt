@@ -41,7 +41,7 @@ lazy val playapp = Project(
 
 val publishingSettings = Seq(
   publishMavenStyle := true,
-  publishTo <<= version { (v: String) => _publishTo(v) },
+  publishTo := _publishTo(version.value),
   publishArtifact in Test := false,
   pomExtra := _pomExtra
 )
