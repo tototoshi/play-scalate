@@ -8,8 +8,8 @@ lazy val plugin = Project (
     name := "play-scalate",
     organization := "com.github.tototoshi",
     version := "0.4.0",
-    scalaVersion := "2.11.11",
-    crossScalaVersions := Seq("2.12.3", "2.11.11"),
+    scalaVersion := "2.12.4",
+    crossScalaVersions := Seq("2.11.12", "2.12.4"),
     resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/",
     libraryDependencies ++= Seq(
       "com.typesafe.play" %% "play" % play.core.PlayVersion.current % "provided",
@@ -28,12 +28,14 @@ lazy val playapp = Project(
 ).enablePlugins(PlayScala).settings(scalariformSettings:_*)
 .settings(
   resourceDirectories in Test += baseDirectory.value / "conf",
-  scalaVersion := "2.11.11",
-  crossScalaVersions := Seq("2.12.3", "2.11.11"),
+  crossScalaVersions := Seq("2.12.4", "2.11.12"),
+  scalaVersion := "2.12.4",
   version := playAppVersion,
   libraryDependencies ++= Seq(
+    guice,
     "org.scalatra.scalate" %% "scalate-core" % "1.8.0",
-    "org.scala-lang" % "scala-compiler" % scalaVersion.value
+    "org.scala-lang" % "scala-compiler" % scalaVersion.value,
+    "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.2" % Test
   ),
   unmanagedResourceDirectories in Compile += baseDirectory.value / "app" / "views"
 )
@@ -41,7 +43,7 @@ lazy val playapp = Project(
 
 val publishingSettings = Seq(
   publishMavenStyle := true,
-  publishTo <<= version { (v: String) => _publishTo(v) },
+  publishTo := _publishTo(version.value),
   publishArtifact in Test := false,
   pomExtra := _pomExtra
 )
