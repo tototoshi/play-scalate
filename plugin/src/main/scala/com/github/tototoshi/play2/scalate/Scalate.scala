@@ -51,8 +51,7 @@ class Scalate @Inject() (environment: Environment) {
         e.pos.line,
         e.pos.column,
         e.brief,
-        e
-      )
+        e)
   }
 
 }
