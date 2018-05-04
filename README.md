@@ -6,7 +6,7 @@
 
 ```scala
 libraryDependencies ++= Seq(
-  "com.github.tototoshi" %% "play-scalate" % "0.3.0",
+  "org.scalatra.scalate" %% "play-scalate" % "0.4.0",
   "org.scalatra.scalate" %% "scalate-core" % "1.7.1",
   "org.scala-lang" % "scala-compiler" % scalaVersion.value
 )

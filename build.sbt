@@ -4,7 +4,7 @@ lazy val plugin = Project (
 ).settings(
   Seq(
     name := "play-scalate",
-    organization := "com.github.tototoshi",
+    organization := "org.scalatra.scalate",
     version := "0.4.0",
     scalaVersion := "2.12.6",
     crossScalaVersions := Seq("2.11.12", "2.12.6"),
