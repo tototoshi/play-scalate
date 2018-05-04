@@ -1,5 +1,3 @@
-scalariformSettings
-
 lazy val plugin = Project (
   id = "plugin",
   base = file ("plugin")
@@ -8,15 +6,15 @@ lazy val plugin = Project (
     name := "play-scalate",
     organization := "com.github.tototoshi",
     version := "0.4.0",
-    scalaVersion := "2.12.4",
-    crossScalaVersions := Seq("2.11.12", "2.12.4"),
+    scalaVersion := "2.12.6",
+    crossScalaVersions := Seq("2.11.12", "2.12.6"),
     resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/",
     libraryDependencies ++= Seq(
       "com.typesafe.play" %% "play" % play.core.PlayVersion.current % "provided",
       "org.scalatra.scalate" %% "scalate-core" % "1.8.0" % "provided"
     ),
     scalacOptions ++= Seq("-language:_", "-deprecation")
-  ) ++ scalariformSettings ++ publishingSettings :_*
+  ) ++ publishingSettings :_*
 )
 
 val playAppName = "playapp"
@@ -25,11 +23,11 @@ val playAppVersion = "1.0-SNAPSHOT"
 lazy val playapp = Project(
   playAppName,
   file("playapp")
-).enablePlugins(PlayScala).settings(scalariformSettings:_*)
+).enablePlugins(PlayScala)
 .settings(
   resourceDirectories in Test += baseDirectory.value / "conf",
-  crossScalaVersions := Seq("2.12.4", "2.11.12"),
-  scalaVersion := "2.12.4",
+  crossScalaVersions := Seq("2.12.6", "2.11.12"),
+  scalaVersion := "2.12.6",
   version := playAppVersion,
   libraryDependencies ++= Seq(
     guice,
