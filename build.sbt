@@ -5,7 +5,7 @@ lazy val plugin = Project (
   Seq(
     name := "play-scalate",
     organization := "org.scalatra.scalate",
-    version := "0.4.0",
+    version := "0.4.1-SNAPSHOT",
     scalaVersion := "2.12.6",
     crossScalaVersions := Seq("2.11.12", "2.12.6"),
     resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/",
