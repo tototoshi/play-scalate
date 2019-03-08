@@ -5,13 +5,13 @@ lazy val plugin = Project (
   Seq(
     name := "play-scalate",
     organization := "org.scalatra.scalate",
-    version := "0.4.1-SNAPSHOT",
-    scalaVersion := "2.12.6",
-    crossScalaVersions := Seq("2.11.12", "2.12.6"),
-    resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/",
+    version := "0.5.0-SNAPSHOT",
+    scalaVersion := "2.12.8",
+    crossScalaVersions := Seq("2.11.12", "2.12.8"),
+    resolvers += Resolver.typesafeRepo("releases"),
     libraryDependencies ++= Seq(
       "com.typesafe.play" %% "play" % play.core.PlayVersion.current % "provided",
-      "org.scalatra.scalate" %% "scalate-core" % "1.8.0" % "provided"
+      "org.scalatra.scalate" %% "scalate-core" % "1.9.1" % "provided"
     ),
     scalacOptions ++= Seq("-language:_", "-deprecation")
   ) ++ publishingSettings :_*
@@ -26,14 +26,14 @@ lazy val playapp = Project(
 ).enablePlugins(PlayScala)
 .settings(
   resourceDirectories in Test += baseDirectory.value / "conf",
-  crossScalaVersions := Seq("2.12.6", "2.11.12"),
-  scalaVersion := "2.12.6",
+  crossScalaVersions := Seq("2.12.8", "2.11.12"),
+  scalaVersion := "2.12.8",
   version := playAppVersion,
   libraryDependencies ++= Seq(
     guice,
-    "org.scalatra.scalate" %% "scalate-core" % "1.8.0",
+    "org.scalatra.scalate" %% "scalate-core" % "1.9.1",
     "org.scala-lang" % "scala-compiler" % scalaVersion.value,
-    "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.2" % Test
+    "org.scalatestplus.play" %% "scalatestplus-play" % "4.0.1" % Test
   ),
   unmanagedResourceDirectories in Compile += baseDirectory.value / "app" / "views"
 )
