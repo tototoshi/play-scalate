@@ -6,8 +6,8 @@
 
 ```scala
 libraryDependencies ++= Seq(
-  "org.scalatra.scalate" %% "play-scalate" % "0.4.0",
-  "org.scalatra.scalate" %% "scalate-core" % "1.8.0",
+  "org.scalatra.scalate" %% "play-scalate" % "0.5.0",
+  "org.scalatra.scalate" %% "scalate-core" % "1.9.1",
   "org.scala-lang" % "scala-compiler" % scalaVersion.value
 )
 
