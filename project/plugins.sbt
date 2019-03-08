@@ -4,7 +4,7 @@ resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/release
 addSbtPlugin("io.get-coursier" % "sbt-coursier" % "1.0.3")
 
 // Use the Play sbt plugin for Play projects
-addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.6.13")
+addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.7.0")
 
 addSbtPlugin("org.scalariform" % "sbt-scalariform" % "1.8.2")
 
