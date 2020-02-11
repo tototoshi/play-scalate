@@ -15,7 +15,7 @@ class Scalate @Inject() (environment: Environment) {
   import org.fusesource.scalate.util._
 
   class ClassPathResourceLoader extends ResourceLoader {
-    private def using[A, R <: { def close() }](r: R)(f: R => A): A =
+    private def using[A, R <: { def close(): Unit }](r: R)(f: R => A): A =
       try { f(r) } finally { r.close() }
 
     override def resource(uri: String): Option[Resource] = {
